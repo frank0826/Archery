@@ -103,6 +103,7 @@ class InceptionEngine(EngineBase):
                          --port={instance.port};--enable-ignore-warnings;--enable-split;*/
                          inception_magic_start;
                          use `{workflow.db_name}`;
+                         set names {instance.charset};
                          {workflow.sqlworkflowcontent.sql_content}
                          inception_magic_commit;"""
         split_result = self.query(sql=sql_split)
